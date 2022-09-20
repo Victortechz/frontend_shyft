@@ -1,6 +1,5 @@
 const { v4: uuid } = require("uuid");
 const axios = require("axios");
-const PORT = "8000";
 const cryptoJS = require("crypto-js");
 
 // ADD REQUESTS TO REQUEST LIST
@@ -41,7 +40,7 @@ export const handleSubmit = async (
   e.preventDefault();
 
   await axios
-    .post(`http://localhost:${PORT}/getrepo`, payLoad)
+    .post(`https://repo-uber.onrender.com/getrepo`, payLoad)
     .then((res) => {
       setResponseList(res.data);
       setRequestObj({
